@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Protect</title>
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === "BLUE") { // Replace "BLUE" with your password
+        window.location.href = "https://yoursite.com/success"; // Redirect URL
+      } else {
+        document.getElementById("message").innerText = "Incorrect password. Try again.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="password" id="password" placeholder="Enter the password" />
+  <button onclick="checkPassword()">Submit</button>
+  <p id="message"></p>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Log Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    /* Main container */
+    .main-container {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    h2 {
+        color: #00eaff;
+    }
+    
+    h3 {
+        color: white;
+    }
+
+    /* Science Log Content */
+    .log-content {
+      margin-bottom: 20px;
+    }
+
+    .log-entry {
+      font-size: 18px;
+      line-height: 1.6;
+      color: white;
+    }
+
+    /* Rectangle Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      grid-template-rows: repeat(2, 150px); /* 2 rows with smaller cards */
+      gap: 10px;
+      position: relative;
+      width: 100%;
+      height: 320px; /* Adjusted height for the landscape card overlap */
+      margin-bottom: 20px;
+    }
+
+    .portrait {
+      border: solid 2px white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Letter label in the top-left corner of each card */
+    .portrait::before {
+      content: attr(data-letter);
+      color: white;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Landscape rectangle that overlaps in the middle */
+    .landscape {
+      background-color: #00000070;
+      position: absolute;
+      border: solid 2px white;
+      top: 50%; /* Vertically center */
+      left: 50%; /* Horizontally center */
+      transform: translate(-50%, -50%); /* Adjust for exact centering */
+      width: 175px; /* Reduced width */
+      height: 135px; /* Reduced height */
+      z-index: 2;
+    }
+
+    /* Portrait rectangle positions */
+    .grid-container .portrait:nth-child(1) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .grid-container .portrait:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .grid-container .portrait:nth-child(3) {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+    .grid-container .portrait:nth-child(4) {
+      grid-column: 4 / 5;
+      grid-row: 1 / 2;
+    }
+    .grid-container .portrait:nth-child(5) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    .grid-container .portrait:nth-child(6) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    .grid-container .portrait:nth-child(7) {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
+    .grid-container .portrait:nth-child(8) {
+      grid-column: 4 / 5;
+      grid-row: 2 / 3;
+    }
+
+    /* Optional text for demonstration */
+    .portrait::after {
+      color: white;
+      text-align: center;
+      display: block;
+      line-height: 150px;
+      font-weight: bold;
+    }
+
+    .landscape::after {
+      content: "Q";
+      text-align: center;
+      display: block;
+      line-height: 80px; /* Same height for the landscape card */
+      font-weight: bold;
+      font-size: 40px;
+      color: white;
+    }
+
+    /* Password section */
+    .password-section {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .password-input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Science Log Content -->
+    <div class="log-content">
+      <h2>Science Log Entry 02-12-2024</h2>
+      <p class="log-entry">
+       Exactly three years. The earth is dying. Jayden needs to plant 10 trees in 2024 to save the earth and plant the future! I think he has planted 9 trees so far?
+
+      </p>
+    </div>
+
+    <!-- Rectangle Grid Layout -->
+    <div class="grid-container">
+      <div class="portrait" data-letter="S"></div>
+      <div class="portrait" data-letter="U"></div>
+      <div class="portrait" data-letter="K"></div>
+      <div class="portrait" data-letter="H"></div>
+      <div class="portrait" data-letter="M"></div>
+      <div class="portrait" data-letter="I"></div>
+      <div class="portrait" data-letter="Z"></div>
+      <div class="portrait" data-letter="B"></div>
+      <div class="landscape"></div></div> <!-- Overlapping landscape rectangle -->
+
+
+    <!-- Password Section (Integrated into main container) -->
+    <h3>Enter code to plant last tree</h3>
+    <input type="password" id="password" class="password-input" placeholder="Enter password">
+
+  <script>
+    // Password validation
+    document.getElementById('password').addEventListener('input', function () {
+      const password = document.getElementById('password').value;
+      if (password === 'DeLorean') {
+        alert("Password correct! Redirecting to another page...");
+        window.location.href = 'https://sites.google.com/view/planting-the-future/confirmation.html'; // Replace with your actual page URL
+      }
+    });
+  </script>
+  </div>
+</body>
+</html>

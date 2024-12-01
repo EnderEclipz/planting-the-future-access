@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Log Entry</title>
+  <style>
+    body {
+      background-color: #1e1e1e; /* Dark background */
+      color: #f0f0f0;            /* Light text */
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      background-color: #2a2a2a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+    }
+    h1 {
+      color: #00eaff; /* Cyan for sci-fi touch */
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .signature {
+      margin-top: 20px;
+      font-style: italic;
+      color: #8f8f8f;
+    }
+    /* Styling for the password section */
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #1e1e1e; /* Blue button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight:bold;
+    }
+    button:hover {
+      background-color: #121212;
+    }
+    p#message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Science Log Entry: 01-12-2027</h1>
+    <p>
+      It has been almost exactly three years... everything is gone. We need him to complete the objective. I left another message for him. You just have to enter the code. I just can't remember where I wrote it... I think it was somewhere under a bag?
+    </p>
+    <p class="signature">— Doc</p>
+
+    <!-- Password Section -->
+    <h2>Enter Password to Access the Next Log</h2>
+    <input type="password" id="password" placeholder="Enter password" />
+    <br>
+    <button onclick="checkPassword()">Submit</button>
+    <p id="message"></p> <!-- Error message placeholder -->
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === "0391") { // Correct password
+        window.location.href = "https://endereclipz.github.io/planting-the-future-access/ScienceLog2"; // Redirect to next log or page
+      } else {
+        document.getElementById("message").innerText = "Incorrect password. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>

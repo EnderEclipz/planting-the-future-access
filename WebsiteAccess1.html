@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password Protected</title>
   <style>
-    /* Basic reset and center alignment */
     body, html {
       height: 100%;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #01233E; /* Dark blue background */
+      background-color: #01233E; /* Light grey background */
     }
     
     .container {
       text-align: center;
       padding: 30px;
+      color: white;
     }
 
     input[type="password"] {
@@ -30,23 +30,36 @@
     }
 
     button {
-      padding: 10px 20px;
-      background-color: #4A90E2; /* Blue button */
-      outline-color: white;
-      outline-width: 3px;
+      padding: 10px 30px;
+      background-color: #01233E; /* Blue button */
       color: white;
-      border: none;
+      border: solid;
       cursor: pointer;
       font-size: 16px;
     }
 
     button:hover {
-      background-color: #357ABD;
+      background-color: #01111f;
     }
 
     p#message {
       color: red;
       font-weight: bold;
+    }
+
+    .hint {
+      color: white;
+      font-size: 14px;
+      margin-top: 10px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .hint-text {
+      display: none; /* Hidden initially */
+      color: whitesmoke;
+      font-size: 14px;
+      margin-top: 5px;
     }
   </style>
 </head>
@@ -57,16 +70,23 @@
     <br>
     <button onclick="checkPassword()">Submit</button>
     <p id="message"></p> <!-- Error message placeholder -->
+    <p class="hint" onclick="showHint()">Forgot Password?</p>
+    <p class="hint-text" id="hintText">Note: I left it in the jar for safekeeping!</p>
   </div>
 
   <script>
     function checkPassword() {
       const input = document.getElementById("password").value;
-      if (input === "DeLorean") { // Replace with your correct password
-        window.location.href = "https://endereclipz.github.io/planting-the-future-access/ScienceLog1.html"; // Redirect URL
+      if (input === "DeLorean") {
+        window.location.href = "https://your-username.github.io/repository-name/diary.html";
       } else {
         document.getElementById("message").innerText = "Incorrect password. Try again.";
       }
+    }
+
+    function showHint() {
+      const hintText = document.getElementById("hintText");
+      hintText.style.display = "block"; // Reveal the hint
     }
   </script>
 </body>

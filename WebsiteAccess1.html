@@ -1,21 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Password Protect</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Protected</title>
+  <style>
+    /* Basic reset and center alignment */
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0; /* Light grey background */
+    }
+    
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4A90E2; /* Blue button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #357ABD;
+    }
+
+    p#message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Password</h2>
+    <input type="password" id="password" placeholder="Enter the password" />
+    <br>
+    <button onclick="checkPassword()">Submit</button>
+    <p id="message"></p> <!-- Error message placeholder -->
+  </div>
+
   <script>
     function checkPassword() {
       const input = document.getElementById("password").value;
-      if (input === "DeLorean") { 
+      if (input === "DeLorean") { // Replace with your correct password
         window.location.href = "https://sites.google.com/view/planting-the-future/science-log"; // Redirect URL
       } else {
-        document.getElementById("message").innerText = "Incorrect password, try again.";
+        document.getElementById("message").innerText = "Incorrect password. Try again.";
       }
     }
   </script>
-</head>
-<body>
-  <input type="password" id="password" placeholder="Enter the password" />
-  <button onclick="checkPassword()">Submit</button>
-  <p id="message"></p>
 </body>
 </html>
